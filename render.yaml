@@ -1,0 +1,20 @@
+# List all services *except* PostgreSQL databases here
+services:
+  # A web service that builds from a Dockerfile
+  - type: web
+    runtime: node  # Node.js runtime
+    buildCommand: npm install
+    startCommand: npm start  # Changed from 'npm install' as that's typically for building
+    plan: free
+    repo: <your-repo-url>  # Replace with actual URL
+    region: frankfurt
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: cloud_db
+          property: ConnectionString
+
+databases:
+  - name: cloud-db
+    plan: free
+    region: frankfurt
