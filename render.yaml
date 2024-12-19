@@ -6,7 +6,7 @@ services:
     buildCommand: npm install
     startCommand: npm start  # Changed from 'npm install' as that's typically for building
     plan: free
-    repo: <your-repo-url>  # Replace with actual URL
+    repo: https://github.com/t0r3l/render_deployment  # Replace with actual URL
     region: frankfurt
     envVars:
       - key: DATABASE_URL
