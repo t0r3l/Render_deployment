@@ -2,6 +2,7 @@
 services:
   # A web service that builds from a Dockerfile
   - type: web
+    name: blueprint_deployment
     runtime: node  # Node.js runtime
     buildCommand: npm install
     startCommand: npm start  # Changed from 'npm install' as that's typically for building
